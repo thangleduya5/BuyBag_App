@@ -41,11 +41,6 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 login(etUsername.getText().toString(), etPassword.getText().toString(), "http://192.168.100.180:3000/api/customer/login");
-                if(customer==null){
-                    Toast.makeText(LoginActivity.this, "Login fail", Toast.LENGTH_SHORT).show();
-                } else{
-                    Toast.makeText(LoginActivity.this, customer.getName(), Toast.LENGTH_SHORT).show();
-                }
             }
         });
         btnRegister.setOnClickListener(new View.OnClickListener() {
@@ -73,6 +68,7 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(JSONArray response) {
                         if(response.length()==0){
+                            Toast.makeText(LoginActivity.this, "Vui lòng kiểm tra lại mật khẩu và tên đăng nhập", Toast.LENGTH_SHORT).show();
                             return;
                         }
                         try {
@@ -82,7 +78,10 @@ public class LoginActivity extends AppCompatActivity {
                                     jsonObject1.getString("addressCustomer"), jsonObject1.getString("email"),
                                     jsonObject1.getString("phone"), jsonObject1.getJSONObject("sex").getJSONArray("data").getInt(0),
                                     jsonObject1.getString("name"));
-                            Toast.makeText(LoginActivity.this, customer.getName(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                            intent.putExtra("customer", customer);
+                            startActivity(intent);
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }

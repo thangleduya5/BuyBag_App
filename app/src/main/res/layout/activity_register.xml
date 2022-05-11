@@ -80,7 +80,7 @@
     <Button
         style="@style/btnStyle"
         android:text="Đăng Kí"
-        android:id="@+id/btnLogin" />
+        android:id="@+id/btnRegister" />
     <LinearLayout
         android:gravity="center"
         android:orientation="horizontal"
@@ -93,7 +93,7 @@
             android:layout_height="wrap_content"/>
         <Button
             android:text="Đăng nhập ngay"
-            android:id="@+id/btnRegister"
+            android:id="@+id/btnLogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     </LinearLayout>

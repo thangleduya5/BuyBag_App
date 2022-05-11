@@ -1,6 +1,8 @@
 package com.example.bantuixach.model;
 
-public class Customer {
+import java.io.Serializable;
+
+public class Customer implements Serializable {
     int idUser;
     int idRole;
     String username;

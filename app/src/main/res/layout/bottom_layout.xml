@@ -6,15 +6,14 @@
     android:layout_height="wrap_content"
     app:layout_constraintBottom_toBottomOf="parent">
     <LinearLayout
-        android:background="@drawable/button_state"
-        android:id="@+id/linearLayout6"
+        android:id="@+id/llHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="vertical"
         android:padding="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/linearLayout5"
+        app:layout_constraintEnd_toStartOf="@+id/llCart"
         app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
@@ -29,15 +28,15 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout5"
+        android:id="@+id/llCart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="vertical"
         android:padding="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/linearLayout4"
-        app:layout_constraintStart_toEndOf="@+id/linearLayout6">
+        app:layout_constraintEnd_toStartOf="@+id/llIntroduce"
+        app:layout_constraintStart_toEndOf="@+id/llHome">
 
         <ImageView
             android:layout_width="30dp"
@@ -52,15 +51,15 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout4"
+        android:id="@+id/llIntroduce"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="vertical"
         android:padding="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/linearLayout7"
-        app:layout_constraintStart_toEndOf="@+id/linearLayout5">
+        app:layout_constraintEnd_toStartOf="@+id/llInfor"
+        app:layout_constraintStart_toEndOf="@+id/llCart">
 
         <ImageView
             android:layout_width="30dp"
@@ -74,7 +73,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout7"
+        android:id="@+id/llInfor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -82,7 +81,7 @@
         android:padding="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/linearLayout4">
+        app:layout_constraintStart_toEndOf="@+id/llIntroduce">
 
         <ImageView
             android:layout_width="30dp"
