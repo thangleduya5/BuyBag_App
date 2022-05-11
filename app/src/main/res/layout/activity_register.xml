@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".view.LoginActivity">
+
+    <LinearLayout
+        style="@style/inputItemLLStyle"
+        android:layout_marginTop="100dp">
+        <TextView
+            style="@style/labelStyle"
+            android:text="Họ tên" />
+        <EditText
+            style="@style/etStyle"
+            android:id="@+id/etFullname"/>
+    </LinearLayout>
+    <LinearLayout style="@style/inputItemLLStyle">
+        <TextView
+            style="@style/labelStyle"
+            android:text="SĐT" />
+        <EditText
+            style="@style/etStyle"
+            android:id="@+id/etPhoneNumber"/>
+    </LinearLayout>
+    <LinearLayout style="@style/inputItemLLStyle">
+        <TextView
+            style="@style/labelStyle"
+            android:text="Email" />
+        <EditText
+            style="@style/etStyle"
+            android:id="@+id/etEmail" />
+    </LinearLayout>
+    <LinearLayout style="@style/inputItemLLStyle">
+        <TextView
+            style="@style/labelStyle"
+            android:text="Địa chỉ" />
+        <EditText
+            style="@style/etStyle"
+            android:id="@+id/etAddress" />
+    </LinearLayout>
+    <LinearLayout style="@style/inputItemLLStyle">
+        <TextView
+            style="@style/labelStyle"
+            android:text="Giới tính"/>
+        <Spinner
+            android:layout_height="match_parent"
+            style="@style/etStyle"
+            android:id="@+id/spSex" />
+    </LinearLayout>
+    <LinearLayout style="@style/inputItemLLStyle">
+        <TextView
+            style="@style/labelStyle"
+            android:text="Tài khoản" />
+        <EditText
+            style="@style/etStyle"
+            android:id="@+id/etUsername" />
+    </LinearLayout>
+    <LinearLayout style="@style/inputItemLLStyle">
+        <TextView
+            style="@style/labelStyle"
+            android:text="Mật khẩu"/>
+        <EditText
+            style="@style/etStyle"
+            android:id="@+id/etPassword" />
+    </LinearLayout>
+    <LinearLayout
+        style="@style/inputItemLLStyle"
+        android:layout_marginBottom="25dp">
+        <TextView
+            style="@style/labelStyle"
+            android:text="Xác nhận" />
+        <EditText
+            style="@style/etStyle"
+            android:id="@+id/etConfirmPass" />
+    </LinearLayout>
+
+    <Button
+        style="@style/btnStyle"
+        android:text="Đăng Kí"
+        android:id="@+id/btnLogin" />
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            style="@style/labelStyle"
+            android:text="Bạn đã có tài khoản? "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:text="Đăng nhập ngay"
+            android:id="@+id/btnRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</LinearLayout>

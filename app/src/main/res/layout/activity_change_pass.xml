@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.InfoActivity">
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/top_layout" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/include2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include">
+        <LinearLayout
+            style="@style/inputItemLLStyle"
+            android:layout_marginTop="50dp">
+            <TextView
+                style="@style/labelStyle"
+                android:text="Mật khẩu hiện tại" />
+            <EditText
+                style="@style/etStyle"
+                android:id="@+id/etPassword"/>
+        </LinearLayout>
+        <LinearLayout style="@style/inputItemLLStyle">
+            <TextView
+                style="@style/labelStyle"
+                android:text="Mật khẩu mới" />
+            <EditText
+                style="@style/etStyle"
+                android:id="@+id/etNewPass" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginBottom="25dp"
+            style="@style/inputItemLLStyle">
+            <TextView
+                style="@style/labelStyle"
+                android:text="Xác nhận" />
+            <EditText
+                style="@style/etStyle"
+                android:id="@+id/etConfirmPass" />
+        </LinearLayout>
+        <Button
+            style="@style/btnStyle"
+            android:text="Lưu thông tin"
+            android:id="@+id/btnSave" />
+        <Button
+            style="@style/btnStyle"
+            android:text="Hủy"
+            android:id="@+id/btnDestroy" />
+    </LinearLayout>
+
+    <include
+        android:id="@+id/include2"
+        layout="@layout/bottom_layout"
+        tools:layout_editor_absoluteY="678dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

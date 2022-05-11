@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center">
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/tuixachmau"/>
+    <TextView
+        android:textColor="@color/primary"
+        android:id="@+id/tvProductName"
+        android:text="Túi xách da heo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:textColor="#E41111"
+        android:textAlignment="textEnd"
+        android:id="@+id/tvProductCost"
+        android:text="1.990.000đ"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

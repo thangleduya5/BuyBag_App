@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.IntroduceActivity">
+
+    <include
+        android:id="@+id/include3"
+        layout="@layout/top_layout" />
+
+    <include
+        android:id="@+id/include4"
+        layout="@layout/bottom_layout"
+        tools:layout_editor_absoluteY="678dp" />
+
+    <TextView
+        android:id="@+id/tvIntroduce"
+        android:scrollbars="vertical"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fontFamily="sans-serif-black"
+        android:paddingTop="0dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="20dp"
+        android:text="Là một website túi thời trang online bán hàng trực tuyến chúng tôi phục vụ nhu cầu mua sắm trực tuyến... bất cứ khi nào khách hàng có nhu cầu mua sắm túi thời trang online chất lượng giá rẻ đẹp thì Shop túi online là 1 sựa lựa chọn tuyệt vời với khách hàng mỗi ngày.
+
+\nMua sắm túi thời trang là nhu cầu thiết yếu của cả phái mạnh và phái đẹp. Thấu hiểu điều này, Shop túi online sẽ mang đến cho bạn nhiều bộ sưu tập thời trang 2022 hot nhất từ các thương hiệu trong và ngoài nước. Bên cạnh đó, túi thời trang cao cấp Hàn Quốc từ các nhãn hàng nổi tiếng cũng là một thế mạnh của trang web mua sắm thời trang hàng đầu này. Ngoài ra, Shop túi online cũng sẽ gợi ý cho bạn những món quà thật ý nghĩa để tặng người thân, bạn bè. Chúng tôi sẽ làm bạn hài lòng với sự lựa chọn của mình bằng giá tốt nhất và chất lượng dịch vụ hoàn hảo. Mua hàng trực tuyến giá rẻ chưa bao giờ dễ dàng đến thế với Shop túi online.
+
+\nBạn có thể thoải mái mua sắm túi thời trang cao cấp  tại Shop túi online. Đa dạng mẫu mã, chủng loại và giá cả, bạn sẽ có nhiều lựa chọn cho phong cách thời trang của riêng mình.  Chúng tôi giao hàng tận nơi ở tại TP Hồ Chí Minh - HCM, Hà Nội - HN và tất cả các tỉnh thành trên Toàn Quốc. Thanh toán khi nhận hàng, 7 ngày đổi trả nếu không hài lòng về sản phẩm.
+
+\n    Với mong muốn khách hàng mua dùng được sản phẩm chính hãng, giá thành hợp lý nhất, dịch vụ chu đáo hoàn hảo, chúng tôi xây dựng website thương mại này nhằm giảm tối đa chi phí, giảm giá thành sản phẩm, đáp ứng được tốt nhất về giá, sản phẩm và dịch vụ cho quý khách.
+” Sự hài lòng của quý khách là niềm vui của chúng tôi”
+
+
+\n Chúng tôi cam kết:
+
+\n Mang lại sản phẩm chất lượng cao với giá tốt nhất đến với khách hàng
+
+ Đặt dịch vụ khách hàng lên hàng đầu
+
+\n  1- Bán đúng giá cả : bạn sẽ được bảo đảm về giá và Tuyệt đối.
+
+\n  2 - Đúng chất lượng : bạn sẽ được đảm bảo về chất lượng hàng hoá bằng việc ghi rõ nguồn gốc xuất xứ sản phẩm.
+
+\n  3 - Giá cả cạnh tranh: bạn sẽ được mua  theo giá tốt nhất thị trường.
+
+\n  4 - Thái độ phục vụ : xem khách hàng là người thân, chúng tôi nỗ lực để khách hàng cảm thấy hài lòng nhất."
+        app:layout_constraintBottom_toTopOf="@+id/include4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include3" />
+</androidx.constraintlayout.widget.ConstraintLayout>

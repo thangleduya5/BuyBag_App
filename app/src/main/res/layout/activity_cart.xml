@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.CartActivity">
+
+    <include
+        android:id="@+id/include5"
+        layout="@layout/top_layout" />
+
+    <ListView
+        android:id="@+id/lvCart"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include5" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout8"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/include6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:gravity="center"
+        android:weightSum="5"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvSum"
+            android:textSize="20dp"
+            android:text="Tổng cộng: 19.090.000 đ"
+            android:textColor="#D31B1B"
+            android:layout_weight="3"/>
+        <Button
+            style="@style/btnStyle"
+            android:layout_width="wrap_content"
+            android:layout_marginBottom="0dp"
+            android:text="Đặt hàng"
+            android:id="@+id/btnOrderBag"
+            android:layout_weight="2"/>
+    </LinearLayout>
+
+    <include
+        android:id="@+id/include6"
+        layout="@layout/bottom_layout"
+        tools:layout_editor_absoluteY="678dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
