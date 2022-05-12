@@ -58,6 +58,7 @@ public class LoginActivity extends AppCompatActivity {
         try {
             jsonObject.put("username", username);
             jsonObject.put("password", password);
+            jsonObject.put("hinhanh",  R.drawable.tuixachmau);
         } catch (JSONException e) {
             e.printStackTrace();
         }
