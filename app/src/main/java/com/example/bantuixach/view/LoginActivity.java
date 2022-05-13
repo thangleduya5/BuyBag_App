@@ -58,7 +58,6 @@ public class LoginActivity extends AppCompatActivity {
         try {
             jsonObject.put("username", username);
             jsonObject.put("password", password);
-            jsonObject.put("hinhanh",  R.drawable.tuixachmau);
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -77,7 +76,7 @@ public class LoginActivity extends AppCompatActivity {
                             customer = new Customer(jsonObject1.getInt("idUser"), jsonObject1.getInt("idRole"),
                                     jsonObject1.getString("username"), jsonObject1.getString("password"),
                                     jsonObject1.getString("addressCustomer"), jsonObject1.getString("email"),
-                                    jsonObject1.getString("phone"), jsonObject1.getJSONObject("sex").getJSONArray("data").getInt(0),
+                                    jsonObject1.getString("phone"), jsonObject1.getInt("sex"),
                                     jsonObject1.getString("name"));
                             Toast.makeText(LoginActivity.this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(LoginActivity.this, MainActivity.class);

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.NoticeActivity">
+
+    <include
+        android:id="@+id/include9"
+        layout="@layout/top_layout" />
+
+    <TextView
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/include10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include9"
+        android:text="Cám ơn bạn đã mua hàng của chúng tôi.\n Đơn hàng của bạn sẽ được chuyển đến bạn sớm nhất có thể"/>
+
+    <include
+        android:id="@+id/include10"
+        layout="@layout/bottom_layout"
+        tools:layout_editor_absoluteY="678dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

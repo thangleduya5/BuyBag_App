@@ -38,12 +38,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="12dp"/>
             <Spinner
+                android:id="@+id/spNumber"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
         <TextView
             android:text="Màu: đen"
-            android:id="@+id/ProductColor"
+            android:id="@+id/tvProductColor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     </LinearLayout>

@@ -58,8 +58,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void getColor() {
-    }
 
     private void getProduct() {
         //Toast.makeText(MainActivity.this,"a"+ brand, Toast.LENGTH_LONG).show();
@@ -149,7 +147,11 @@ public class MainActivity extends AppCompatActivity {
         llCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, CartActivity.class));
+                if(MainActivity.customer==null){
+                    startActivity(new Intent(MainActivity.this, LoginActivity.class));
+                } else{
+                    startActivity(new Intent(MainActivity.this, CartActivity.class));
+                }
             }
         });
         llIntroduce.setOnClickListener(new View.OnClickListener() {
@@ -161,7 +163,11 @@ public class MainActivity extends AppCompatActivity {
         llInfor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, InfoActivity.class));
+                if(MainActivity.customer==null){
+                    startActivity(new Intent(MainActivity.this, LoginActivity.class));
+                } else{
+                    startActivity(new Intent(MainActivity.this, InfoActivity.class));
+                }
             }
         });
     }

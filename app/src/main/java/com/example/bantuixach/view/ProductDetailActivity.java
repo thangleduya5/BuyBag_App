@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,6 +31,7 @@ public class ProductDetailActivity extends AppCompatActivity {
     Button btnAddCart;
     TextView tvProductName, tvProductCost, tvProductID, tvProductDescr, tvProductColor, tvProductBrand, tvProductNumber;
     Product product;
+    LinearLayout llHome, llCart, llIntroduce, llInfor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +51,150 @@ public class ProductDetailActivity extends AppCompatActivity {
                     startActivity(new Intent(ProductDetailActivity.this, LoginActivity.class));
                 } else{
 
+                    RequestQueue requestQueue = Volley.newRequestQueue(ProductDetailActivity.this);
+
+                    JSONObject jsonObject = new JSONObject();
+                    try {
+                        jsonObject.put("idUser", MainActivity.customer.getIdUser());
+                        jsonObject.put("idProduct", Integer.parseInt(tvProductID.getText().toString()));
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                    String requestBody = jsonObject.toString();
+
+                    JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, "http://192.168.100.180:3000/api/cart", null,
+                            new Response.Listener<JSONArray>() {
+                                @Override
+                                public void onResponse(JSONArray response) {
+                                    Toast.makeText(ProductDetailActivity.this,"tvProductID: " + Integer.parseInt(tvProductID.getText().toString()), Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(ProductDetailActivity.this,"idUser: " + MainActivity.customer.getIdUser(), Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(ProductDetailActivity.this,"Chiều dài của response: " + response.length(), Toast.LENGTH_SHORT).show();
+//                                    if(response.length()==0){
+//                                        JSONObject jsonObject = new JSONObject();
+//                                        try {
+//                                            jsonObject.put("idUser", MainActivity.customer.getIdUser());
+//                                            jsonObject.put("idProduct", Integer.parseInt(tvProductID.getText().toString()));
+//                                            jsonObject.put("quantity", 1);
+//                                        } catch (JSONException e) {
+//                                            e.printStackTrace();
+//                                        }
+//                                        String requestBody = jsonObject.toString();
+//
+//                                        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, "http://192.168.100.180:3000/api/cart", null,
+//                                                new Response.Listener<JSONObject>() {
+//                                                    @Override
+//                                                    public void onResponse(JSONObject response) {
+//                                                        try {
+//                                                            if(response.getBoolean("status")){
+//                                                                Toast.makeText(ProductDetailActivity.this, "Thêm vào giỏ hàng thành công", Toast.LENGTH_SHORT).show();
+//                                                                startActivity(new Intent(ProductDetailActivity.this, CartActivity.class));
+//                                                            }
+//                                                        } catch (JSONException e) {
+//                                                            e.printStackTrace();
+//                                                        }
+//                                                    }
+//                                                },
+//                                                new Response.ErrorListener() {
+//                                                    @Override
+//                                                    public void onErrorResponse(VolleyError error) {
+//                                                        Toast.makeText(ProductDetailActivity.this, "Thêm vào giỏ hàng lỗi", Toast.LENGTH_SHORT).show();
+//                                                    }
+//                                                })
+//                                        {
+//                                            @Override
+//                                            public byte[] getBody() {
+//                                                return requestBody.getBytes();
+//                                            }
+//                                        };
+//                                        requestQueue.add(jsonObjectRequest);
+//                                    } else {
+//                                        JSONObject jsonObject = new JSONObject();
+//                                        try {
+//                                            jsonObject.put("idUser", MainActivity.customer.getIdUser());
+//                                            jsonObject.put("idProduct", Integer.parseInt(tvProductID.getText().toString()));
+//                                            jsonObject.put("quantity", response.getJSONObject(0).getInt("quantity")+1);
+//                                        } catch (JSONException e) {
+//                                            e.printStackTrace();
+//                                        }
+//                                        String requestBody = jsonObject.toString();
+//
+//                                        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.PUT, "http://192.168.100.180:3000/api/cart", null,
+//                                                new Response.Listener<JSONObject>() {
+//                                                    @Override
+//                                                    public void onResponse(JSONObject response) {
+//                                                        try {
+//                                                            if(response.getBoolean("status")){
+//                                                                Toast.makeText(ProductDetailActivity.this, "Thêm vào giỏ hàng thành công", Toast.LENGTH_SHORT).show();
+//                                                                startActivity(new Intent(ProductDetailActivity.this, CartActivity.class));
+//                                                            }
+//                                                        } catch (JSONException e) {
+//                                                            e.printStackTrace();
+//                                                        }
+//                                                    }
+//                                                },
+//                                                new Response.ErrorListener() {
+//                                                    @Override
+//                                                    public void onErrorResponse(VolleyError error) {
+//                                                        Toast.makeText(ProductDetailActivity.this, "Thêm vào giỏ hàng lỗi", Toast.LENGTH_SHORT).show();
+//                                                    }
+//                                                })
+//                                        {
+//                                            @Override
+//                                            public byte[] getBody() {
+//                                                return requestBody.getBytes();
+//                                            }
+//                                        };
+//                                        requestQueue.add(jsonObjectRequest);
+//                                    }
+                                }
+                            },
+                            new Response.ErrorListener() {
+                                @Override
+                                public void onErrorResponse(VolleyError error) {
+
+                                }
+                            })
+                    {
+                        @Override
+                        public byte[] getBody() {
+                            return requestBody.getBytes();
+                        }
+                    };
+                    requestQueue.add(jsonArrayRequest);
+                }
+            }
+        });
+        llCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(MainActivity.customer==null){
+                    startActivity(new Intent(ProductDetailActivity.this, LoginActivity.class));
+                } else{
+                    startActivity(new Intent(ProductDetailActivity.this, CartActivity.class));
+                }
+            }
+        });
+        llHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ProductDetailActivity.this, MainActivity.class);
+                intent.putExtra("customer", MainActivity.customer);
+                startActivity(intent);
+            }
+        });
+        llIntroduce.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ProductDetailActivity.this, IntroduceActivity.class));
+            }
+        });
+        llInfor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(MainActivity.customer==null){
+                    startActivity(new Intent(ProductDetailActivity.this, LoginActivity.class));
+                } else{
+                    startActivity(new Intent(ProductDetailActivity.this, InfoActivity.class));
                 }
             }
         });
@@ -104,6 +250,10 @@ public class ProductDetailActivity extends AppCompatActivity {
     }
 
     private void setControl(){
+        llHome = findViewById(R.id.llHome);
+        llCart = findViewById(R.id.llCart);
+        llIntroduce = findViewById(R.id.llIntroduce);
+        llInfor = findViewById(R.id.llInfor);
         ivProduct = findViewById(R.id.ivProduct);
         tvProductName = findViewById(R.id.tvProductName);
         tvProductCost = findViewById(R.id.tvProductCost);

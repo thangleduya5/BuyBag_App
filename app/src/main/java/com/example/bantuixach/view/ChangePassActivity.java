@@ -2,10 +2,12 @@ package com.example.bantuixach.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -23,6 +25,7 @@ public class ChangePassActivity extends AppCompatActivity {
 
     EditText etPassword, etNewPass, etConfirmPass;
     Button btnSave, btnDestroy;
+    LinearLayout llHome, llCart, llIntroduce, llInfor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +46,32 @@ public class ChangePassActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 finish();
+            }
+        });
+        llCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ChangePassActivity.this, CartActivity.class));
+            }
+        });
+        llHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ChangePassActivity.this, MainActivity.class);
+                intent.putExtra("customer", MainActivity.customer);
+                startActivity(intent);
+            }
+        });
+        llIntroduce.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ChangePassActivity.this, IntroduceActivity.class));
+            }
+        });
+        llInfor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ChangePassActivity.this, InfoActivity.class));
             }
         });
     }
@@ -94,6 +123,10 @@ public class ChangePassActivity extends AppCompatActivity {
 
 
     private void setControl(){
+        llHome = findViewById(R.id.llHome);
+        llCart = findViewById(R.id.llCart);
+        llIntroduce = findViewById(R.id.llIntroduce);
+        llInfor = findViewById(R.id.llInfor);
         etPassword = findViewById(R.id.etPassword);
         etNewPass = findViewById(R.id.etNewPass);
         etConfirmPass = findViewById(R.id.etConfirmPass);

@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -36,6 +37,7 @@ public class InfoActivity extends AppCompatActivity {
     EditText etFullname, etUsername, etPhoneNumber, etEmail, etAddress;
     Spinner spSex;
     Customer customerUpdate;
+    LinearLayout llHome, llCart, llIntroduce, llInfor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,7 +92,26 @@ public class InfoActivity extends AppCompatActivity {
             }
         });
 
-
+        llCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(InfoActivity.this, CartActivity.class));
+            }
+        });
+        llHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(InfoActivity.this, MainActivity.class);
+                intent.putExtra("customer", MainActivity.customer);
+                startActivity(intent);
+            }
+        });
+        llIntroduce.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(InfoActivity.this, IntroduceActivity.class));
+            }
+        });
     }
 
     private Boolean validateCustomer(){
@@ -211,6 +232,10 @@ public class InfoActivity extends AppCompatActivity {
     }
 
     private void setControl(){
+        llHome = findViewById(R.id.llHome);
+        llCart = findViewById(R.id.llCart);
+        llIntroduce = findViewById(R.id.llIntroduce);
+        llInfor = findViewById(R.id.llInfor);
         btnSave = findViewById(R.id.btnSave);
         btnChangePass = findViewById(R.id.btnChangePass);
         btnLogout = findViewById(R.id.btnLogout);
